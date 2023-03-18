@@ -2,14 +2,10 @@
 layout: post
 title:  "How to pass a table to a Store Procedure?"
 ---
-
-# How to pass a table to a Store Procedure?
-Here are the answers: https://stackoverflow.com/a/7097418/3290276
-
 This can be useful when we want to get data in bulk from a Store Procedure. 
 For example uploding a file with a few columns and we need the values of the columns to be the parameters of the query.
 
-We will explain here the answer number 3 mentioned in the stackoverflow link.
+We will explain here the answer number 3 mentioned in the stackoverflow answer. [C# SQL Server - Passing a list to a stored procedure](https://stackoverflow.com/a/7097418/3290276)
 
 In the SQL Server Management Studio(SSMS) Create a new type as table. This will be the shape of the data that you will be passing to the Store Procedure(SP)
 ```
@@ -49,7 +45,7 @@ GO
 
 ```
 
-Here the Method that will pass the table and execute the SP
+Pass the table and execute the SP
 ```
         private static void ExecSPfromTable(SqlConnection connection)
         {
@@ -82,7 +78,7 @@ Here the Method that will pass the table and execute the SP
         }
 ```
 
-Here the Main:
+Main:
 ```
          static void Main(string[] args)
         {
@@ -102,11 +98,10 @@ Here the Main:
             Console.ReadKey(true);
         }
 ```
-Here the results:
+Results:
 
 ![image](https://user-images.githubusercontent.com/4723976/226143187-9c6329dc-b531-4075-a877-f14189fbe64e.png)
 
 References: 
-- For this example we are using ```System.Data.SqlClient``` which can be added to the project as a Nuget Package
-- Using the public available AdventureWorks2019 : https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms
-- 
+- For this example we are using ```using System.Data.SqlClient``` which can be added to the project as a Nuget Package
+- Using the public available database [AdventureWorks2019](https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms)
