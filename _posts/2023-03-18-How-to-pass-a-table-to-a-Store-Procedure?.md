@@ -102,7 +102,9 @@ Here the Main:
             Console.ReadKey(true);
         }
 ```
+Here the results:
 
+![image](https://user-images.githubusercontent.com/4723976/226143187-9c6329dc-b531-4075-a877-f14189fbe64e.png)
 
 References: 
 - For this example we are using ```System.Data.SqlClient``` which can be added to the project as a Nuget Package
