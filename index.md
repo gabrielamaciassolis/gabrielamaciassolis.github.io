@@ -1,3 +1,9 @@
 ## Welcome
 
-{% post_link _posts/2012-09-12-how-to-write-a-blog.md text %}
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
