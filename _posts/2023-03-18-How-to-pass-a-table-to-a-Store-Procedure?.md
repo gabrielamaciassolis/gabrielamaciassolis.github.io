@@ -8,7 +8,7 @@ For example uploding a file with a few columns and we need the values of the col
 We will explain here the answer number 3 mentioned in the stackoverflow answer. [C# SQL Server - Passing a list to a stored procedure](https://stackoverflow.com/a/7097418/3290276)
 
 In the SQL Server Management Studio(SSMS) Create a new type as table. This will be the shape of the data that you will be passing to the Store Procedure(SP)
-```
+```tsql
  CREATE TYPE [dbo].[myExternalTablev2] AS TABLE(
     [OrganizationLevel] [int] NOT NULL,
 	  [BusinessEntityID ] [int] NOT NULL
@@ -17,7 +17,7 @@ In the SQL Server Management Studio(SSMS) Create a new type as table. This will 
 
 Then create the SP where the input will be of the type that we previously created. Note it has to be READONLY
 We can then use that parameter as a table and join it to the tables that contain the data that we are looking for.
-```
+```tsql
 USE [AdventureWorks2019]
 GO
 
@@ -46,7 +46,7 @@ GO
 ```
 
 Pass the table and execute the SP
-```
+```csharp
         private static void ExecSPfromTable(SqlConnection connection)
         {
             using (SqlCommand command = new SqlCommand("uspGetEmployeeManagersFromTable", connection))
@@ -79,7 +79,7 @@ Pass the table and execute the SP
 ```
 
 Main:
-```
+```csharp
          static void Main(string[] args)
         {
             Console.WriteLine("Start");
