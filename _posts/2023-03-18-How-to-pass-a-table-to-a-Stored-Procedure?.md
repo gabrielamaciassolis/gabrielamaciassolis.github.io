@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "How to pass a table to a Stored Procedure?"
+tags: SQL
 ---
 This can be useful when we want to get data in bulk from a Store Procedure. 
 For example uploding a file with a few columns and we need the values of the columns to be the parameters of the query.
